@@ -186,7 +186,7 @@ View inserted data.
 * db.people.insertOne({name: "Sai", age: 25})    # Insert document
 * db.people.find()                 # Retrieve all documents
 
-## Section-6 📈 MongoDB vs SQL
+## 📈 MongoDB vs SQL
 
 | Feature       | MongoDB                 | SQL (e.g., MySQL)       |
 | ------------- | ----------------------- | ----------------------- |
@@ -196,7 +196,7 @@ View inserted data.
 | Performance   | Faster for large data   | Depends on structure    |
 
 
-## Section-7 FastAPI Questions
+## Section-6 FastAPI Questions
 
 What is FastAPI and who created it?
 
