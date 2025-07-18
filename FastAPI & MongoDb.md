@@ -82,18 +82,6 @@ ReDoc: http://127.0.0.1:8000/redoc
 | Response Models      | Clean output with auto-formatting         |
 | Dependency Injection | For DB, authentication, etc.              |
 
-
-## ✅ Benefits of Using FastAPI
-### Feature	Benefit
-| Concept              | Description                               |
-| -------------------- | ----------------------------------------- |
-| Path Parameters      | Dynamic data in URL paths                 |
-| Query Parameters     | Filters or modifiers in the query string  |
-| Request Body         | Uses Pydantic models for structured input |
-| Response Models      | Clean output with auto-formatting         |
-| Dependency Injection | For DB, authentication, etc.              |
-
-
 # 🍃 MongoDB
 
 ## 🔍 What is MongoDB?
