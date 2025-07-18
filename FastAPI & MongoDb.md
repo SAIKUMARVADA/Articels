@@ -1,6 +1,6 @@
 #  FastAPI + 🍃 MongoDB 
 
-## 📌 Introduction to FastAPI
+## Section-1 Introduction to FastAPI
 A Modern Web Framework for Python
 
 In the ever-evolving world of web development, FastAPI has quickly become one of the most loved and fastest-growing Python frameworks. Designed for building high-performance APIs, FastAPI combines simplicity, power, and modern Python features to deliver an outstanding developer experience.
@@ -14,7 +14,7 @@ FastAPI is a modern, high-performance web framework for building RESTful APIs wi
 
 ✅ Supports asynchronous programming using async/await
 
-## ⚡ Key Features of FastAPI
+## Section-2⚡ Key Features of FastAPI
 
 ### Blazing Fast:
 Among the fastest Python frameworks—comparable to Node.js and Go.
@@ -31,7 +31,7 @@ Native support for async operations makes it ideal for performance-heavy apps.
 ### Developer Friendly:
 Minimal setup, readable code, and amazing community support.
 
-## 💡 Example: Simple Inventory API with FastAPI
+## Section-3 💡 Example: Simple Inventory API with FastAPI
 ### ✅ Step 1: Install Dependencies
 ```bash
 
@@ -72,7 +72,7 @@ Swagger UI: http://127.0.0.1:8000/docs
 
 ReDoc: http://127.0.0.1:8000/redoc
 
-##  Core Concepts in FastAPI
+## Section-4 Core Concepts in FastAPI
 
 | Concept              | Description                               |
 | -------------------- | ----------------------------------------- |
@@ -84,7 +84,7 @@ ReDoc: http://127.0.0.1:8000/redoc
 
 # 🍃 MongoDB
 
-## 🔍 What is MongoDB?
+## Section-1 🔍 What is MongoDB?
 MongoDB is a NoSQL document database, built for flexibility and scalability. Instead of tables (SQL), MongoDB uses:
 
 * Document → JSON Object
@@ -93,7 +93,7 @@ MongoDB is a NoSQL document database, built for flexibility and scalability. Ins
 
 It is widely used in modern backend development due to its support for unstructured data and ease of scaling.
 
-## ✅ FastAPI + MongoDB Integration
+## Section-2 FastAPI + MongoDB Integration
 ### 🛠️ Project Workflow
 * Set up FastAPI project
 
@@ -103,7 +103,7 @@ It is widely used in modern backend development due to its support for unstructu
 
 * Run server and test using Postman or browser
 
-## 📋 Prerequisites
+## Section-3 📋 Prerequisites
 ### Make sure the following tools are installed:
 
 * Python 3.8+
@@ -118,7 +118,7 @@ It is widely used in modern backend development due to its support for unstructu
 
 pip install fastapi uvicorn pymongo pydantic motor
 ```
-### 🔗 Connect FastAPI with MongoDB
+### Section-4 Connect FastAPI with MongoDB
 ## ✅ Sample MongoDB Connection Code (mongo_examples.py)
 
 ```python
@@ -168,7 +168,7 @@ Check if test_db > people collection is visible.
 
 View inserted data. 
 
-## 📌 Key Terminology
+## Section-5 📌 Key Terminology
 
 | Term       | Meaning                                                         |
 | ---------- | --------------------------------------------------------------- |
@@ -186,7 +186,7 @@ View inserted data.
 * db.people.insertOne({name: "Sai", age: 25})    # Insert document
 * db.people.find()                 # Retrieve all documents
 
-## 📈 MongoDB vs SQL
+##Section-6 📈 MongoDB vs SQL
 
 | Feature       | MongoDB                 | SQL (e.g., MySQL)       |
 | ------------- | ----------------------- | ----------------------- |
@@ -196,7 +196,7 @@ View inserted data.
 | Performance   | Faster for large data   | Depends on structure    |
 
 
-## FastAPI Questions
+## Section-7 FastAPI Questions
 
 What is FastAPI and who created it?
 
