@@ -5,7 +5,7 @@ A Modern Web Framework for Python
 
 In the ever-evolving world of web development, FastAPI has quickly become one of the most loved and fastest-growing Python frameworks. Designed for building high-performance APIs, FastAPI combines simplicity, power, and modern Python features to deliver an outstanding developer experience.
 
-## 🔍 What is FastAPI?
+##  What is FastAPI?
 FastAPI is a modern, high-performance web framework for building RESTful APIs with Python 3.7+ based on type hints.
 
 ✅ Created by Sebastián Ramírez
@@ -14,24 +14,123 @@ FastAPI is a modern, high-performance web framework for building RESTful APIs wi
 
 ✅ Supports asynchronous programming using async/await
 
-## Section-2⚡ Key Features of FastAPI
+## Section-2 Key Features of FastAPI
 
-### Blazing Fast:
-Among the fastest Python frameworks—comparable to Node.js and Go.
+### 1. High Performance
+* Built on Starlette and Pydantic
 
-### Automatic Documentation:
-Generates Swagger UI and ReDoc docs at /docs and /redoc.
+* Asynchronous support using async/await
 
-### Data Validation:
-Uses Pydantic to validate request data and define schemas.
+* One of the fastest Python frameworks, rivaling Node.js and Go
 
-### Async Support:
-Native support for async operations makes it ideal for performance-heavy apps.
+###  2. Automatic Interactive API Docs
+* FastAPI automatically generates two types of documentation:
 
-### Developer Friendly:
-Minimal setup, readable code, and amazing community support.
+    * Swagger UI: /docs
 
-## Section-3 💡 Example: Simple Inventory API with FastAPI
+    * ReDoc: /redoc
+
+* Helps in testing and understanding the API without extra tools
+
+###  3. Data Validation and Serialization
+* Uses Pydantic models for:
+
+    * Input validation
+
+    * Output formatting
+
+* Validates data before it reaches your code
+
+```python
+
+from pydantic import BaseModel
+
+class User(BaseModel):
+    name: str
+    age: int
+```
+---
+
+###  4. Async Support
+* Built with asyncio, supports async def for concurrent I/O operations
+
+* Perfect for modern use-cases like real-time apps, background tasks, etc.
+
+```python
+
+@app.get("/users")
+async def get_users():
+    return await fetch_users_from_db()
+```
+---
+
+### 5. Dependency Injection System
+* Built-in support for injecting dependencies like DB sessions, auth, etc.
+
+```python
+
+from fastapi import Depends
+
+def get_db():
+    db = connect_db()
+    try:
+        yield db
+    finally:
+        db.close()
+
+@app.get("/items/")
+def read_items(db = Depends(get_db)):
+    return db.query_items()
+
+```
+---
+
+###  6. Type Hints = Fewer Bugs
+* Leverages Python type hints for:
+
+    * Data validation
+
+    * Auto-generated documentation
+
+    * Editor support (auto-complete, linting)
+
+###  7. Built-in OAuth2, JWT, and Security Utilities
+* Easily handle user authentication, token generation, and permission handling
+
+### 8. Request and Response Models
+* Use models to control how data enters and leaves your API
+
+* Supports JSON and other media types
+
+### 9. Path, Query, and Body Parameter Handling
+* Automatically handles:
+
+    * Path params: /users/{id}
+
+    * Query params: /users?name=Sai
+
+    * Body params: JSON input
+
+###  10. Testability
+* Compatible with Pytest, and you can easily test endpoints using TestClient
+
+```python
+
+from fastapi.testclient import TestClient
+client = TestClient(app)
+
+def test_read_main():
+    response = client.get("/")
+    assert response.status_code == 200
+```
+---
+
+###  11. Extensible and Modular
+* Easily split code into routers, services, and models
+
+* Great for microservices or modular design
+
+## Section-3  Example: Simple Inventory API with FastAPI
 ### ✅ Step 1: Install Dependencies
 ```bash
 
@@ -84,7 +183,7 @@ ReDoc: http://127.0.0.1:8000/redoc
 
 # 🍃 MongoDB
 
-## Section-1 🔍 What is MongoDB?
+## Section-1  What is MongoDB?
 MongoDB is a NoSQL document database, built for flexibility and scalability. Instead of tables (SQL), MongoDB uses:
 
 * Document → JSON Object
@@ -103,7 +202,7 @@ It is widely used in modern backend development due to its support for unstructu
 
 * Run server and test using Postman or browser
 
-## Section-3 📋 Prerequisites
+## Section-3  Prerequisites
 ### Make sure the following tools are installed:
 
 * Python 3.8+
@@ -150,12 +249,12 @@ people_collection.insert_many([
 
 ---
 
-## 📊 View the data in MongoDB Compass under:
+##  View the data in MongoDB Compass under:
 
 * Database: test_db
 * Collection: people
 
-## ▶️ How to Run
+## ▶ How to Run
 * Save the code in a file named mongo_examples.py.
 
 * Open the terminal and navigate to the directory.
@@ -168,7 +267,7 @@ Check if test_db > people collection is visible.
 
 View inserted data. 
 
-## Section-5 📌 Key Terminology
+## Section-5  Key Terminology
 
 | Term       | Meaning                                                         |
 | ---------- | --------------------------------------------------------------- |
@@ -330,25 +429,37 @@ db.users.aggregate([
 
 ## Section-6 FastAPI Questions
 
-What is FastAPI and who created it?
-
-What are the core advantages of FastAPI over Flask or Django?
-
-Explain how FastAPI supports asynchronous programming.
-
-What is Pydantic and how does FastAPI use it?
-
-What is the role of BaseModel in FastAPI?
+* 1 What is FastAPI and who created it?
+* 2 What are the core advantages of FastAPI over Flask or Django?
+* 3 Explain how FastAPI supports asynchronous programming.
+* 4 What is Pydantic and how does FastAPI use it?
+* 5 What is the role of BaseModel in FastAPI?
+* 6 How does FastAPI generate automatic API documentation?
+* 7 What is the difference between @app.get() and @app.post() in FastAPI?
+* 8 How do you define path, query, and request body parameters in FastAPI?
+* 9 What is dependency injection in FastAPI and how does it work?
+* 10 How do you handle exceptions and custom error messages in FastAPI?
+* 11 How do you write asynchronous routes using async def in FastAPI?
+* 12 How do you test FastAPI applications?
+* 13 What are the key components of a typical FastAPI project structure?
+* 14 How do you implement authentication (e.g., JWT) in FastAPI?
+* 15 What are Background Tasks in FastAPI and how are they used?
+* 16 What is CORS and how do you configure it in FastAPI?
 
 ## MongoDB Questions
 
-What is MongoDB and how does it differ from SQL databases?
-
-What are documents and collections in MongoDB?
-
-What is MongoDB Compass and how is it used?
-
-What is MongoDB Atlas?
-
-What Python library do we use to connect MongoDB?
-
+* 1 What is MongoDB and how does it differ from SQL databases?
+* 2 What are documents and collections in MongoDB?
+* 3 What is MongoDB Compass and how is it used?
+* 4 What is MongoDB Atlas?
+* 5 What Python library do we use to connect MongoDB?
+* 6 How do you connect FastAPI with MongoDB?
+* 7 What is motor and why is it used with FastAPI?
+* 8 How do you insert a Pydantic model into MongoDB in FastAPI?
+* 9 How do you convert MongoDB ObjectId to a JSON serializable format?
+* 10 How do you update MongoDB documents using FastAPI?
+* 11 How do you handle MongoDB connection errors in FastAPI?
+* 12 How do you structure a FastAPI project that uses MongoDB?
+* 13 How do you use dependency injection to manage MongoDB client in FastAPI?
+* 14 How do you ensure data uniqueness (like email) in MongoDB using FastAPI?
+* 15 How do you serialize MongoDB query results before returning them in FastAPI?
