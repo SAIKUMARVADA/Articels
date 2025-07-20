@@ -180,11 +180,143 @@ View inserted data.
 
 
 ## Basic Commands (Mongo Shell / Compass)
-* show dbs                         # Show all databases
-* use test_db                      # Switch to a database
-* db.createCollection("people")    # Create a collection
-* db.people.insertOne({name: "Sai", age: 25})    # Insert document
-* db.people.find()                 # Retrieve all documents
+
+### 1. Connect to MongoDB
+If using the MongoDB Shell:
+
+```bash
+
+mongo
+If you're connecting to a remote server:
+
+bash
+
+mongo "mongodb+srv://<username>:<password>@cluster0.mongodb.net/test"
+```
+---
+###  2. Show Databases
+```js
+
+show dbs
+```
+---
+###  3. Use a Database
+```js
+use myDatabase
+```
+---
+###  4. Show Collections (Tables)
+```js
+show collections
+```
+---
+### 5. Create or Insert Data into Collection
+```js
+db.users.insertOne({ name: "Sai", age: 25, city: "Hyderabad" })
+```
+---
+```js
+
+db.users.insertMany([
+  { name: "Kiran", age: 27 },
+  { name: "Anu", age: 23 }
+])
+```
+---
+### 6. Find Documents
+* Find all:
+
+```js
+
+db.users.find()
+```
+---
+* Find with condition:
+
+```js
+
+db.users.find({ age: 25 })
+```
+---
+### 7. Update Documents
+* Update one:
+
+```js
+
+db.users.updateOne({ name: "Sai" }, { $set: { age: 26 } })
+```
+---
+* Update many:
+
+```js
+
+db.users.updateMany({ city: "Hyderabad" }, { $set: { country: "India" } })
+```
+---
+### 8. Delete Documents
+* Delete one:
+
+```js
+
+db.users.deleteOne({ name: "Kiran" })
+```
+---
+* Delete many:
+
+```js
+
+db.users.deleteMany({ city: "Hyderabad" })
+```
+---
+### 9. Drop Collection
+```js
+
+db.users.drop()
+```
+---
+### 10. Drop Database
+```js
+
+db.dropDatabase()
+```
+---
+### 11. Count Documents
+```js
+
+db.users.countDocuments()
+```
+---
+###  12. Sort and Limit
+* Sort by age:
+
+```js
+
+db.users.find().sort({ age: 1 }) // Ascending
+```
+---
+* Limit results:
+
+```js
+
+db.users.find().limit(5)
+```
+---
+### 13. Create Index
+```js
+
+db.users.createIndex({ name: 1 }) // 1 = ascending, -1 = descending
+```
+---
+### 14. Aggregation Example
+```js
+
+db.users.aggregate([
+  { $match: { city: "Hyderabad" } },
+  { $group: { _id: "$city", total: { $sum: 1 } } }
+])
+```
+---
+
 
 ## 📈 MongoDB vs SQL
 
