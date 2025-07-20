@@ -1,18 +1,18 @@
 #  FastAPI + 🍃 MongoDB 
 
 ## Section-1 Introduction to FastAPI
-A Modern Web Framework for Python
+* A Modern Web Framework for Python
 
 In the ever-evolving world of web development, FastAPI has quickly become one of the most loved and fastest-growing Python frameworks. Designed for building high-performance APIs, FastAPI combines simplicity, power, and modern Python features to deliver an outstanding developer experience.
 
 ##  What is FastAPI?
-FastAPI is a modern, high-performance web framework for building RESTful APIs with Python 3.7+ based on type hints.
+* FastAPI is a modern, high-performance web framework for building RESTful APIs with Python 3.7+ based on type hints.
 
-✅ Created by Sebastián Ramírez
-
-✅ Built on Starlette for web handling and Pydantic for data validation
-
-✅ Supports asynchronous programming using async/await
+   ✅ Created by Sebastián Ramírez
+   
+   ✅ Built on Starlette for web handling and Pydantic for data validation
+   
+   ✅ Supports asynchronous programming using async/await
 
 ## Section-2 Key Features of FastAPI
 
